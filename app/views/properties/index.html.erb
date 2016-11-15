@@ -1,0 +1,16 @@
+<h1>
+  財產目錄
+  <%= link_to "新增", new_property_path, class: "btn btn-link" %>
+</h1>
+
+<div class="clearfix"></div>
+<table class="table">
+  <tbody>
+    <% @properties.each do |p| %>
+      <tr>
+        <td><%= p.name %></td>
+        <td><%= link_to "修改", edit_property_path(p), class: "btn btn-link" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
