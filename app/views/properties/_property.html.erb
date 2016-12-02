@@ -1,0 +1,48 @@
+<div class="card property clearfix">
+  <div class="img-wrapper col-sm-4">
+    <%#= image_tag "http://cms-bucket.nosdn.127.net/catchpic/b/b0/b073d08314a480c6b19454a8d4612107.jpg?imageView&thumbnail=550x0" %>
+    <img data-src="holder.js/100px200?theme=sjz&text=尚未上傳">
+  </div>
+  <div class="content printable col-sm-8">
+    <div class="title">
+      <%= property.name %>
+      <%= link_to edit_property_path(property.token) do %>
+        <i class="material-icons">&#xE3C9;</i>
+      <% end %>
+      <div class="actions dropdown pull-right">
+        <a href="#" class="dropdown-toggle" id="drop4" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+          <i class="material-icons">expand_more</i>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="drop4">
+          <li><%= link_to "申請使用", edit_property_path(property.token) %></li>
+          <li><%= link_to "所在位置", edit_property_path(property.token) %></li>
+          <li><%= link_to "盤點紀錄", edit_property_path(property.token) %></li>
+          <li><%= link_to "列印標籤", edit_property_path(property.token) %></li>
+        </ul>
+      </div>
+    </div>
+    <hr style="width: 66.667%; margin: 10px 0px;">
+    <div class="row properties">
+      <div class="col-sm-9">
+        <div class="row">
+          <div class="col-md-2 col-sm-3 name">編碼</div>
+          <div class="col-md-10 col-sm-9 value"><%= property.token %></div>
+        </div>
+        <div class="row">
+          <div class="col-md-2 col-sm-3 name">使用人</div>
+          <div class="col-md-10 col-sm-9 value">
+            謝沛廷<%= link_to root_path do %><i class="material-icons">info_outline</i><% end %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2 col-sm-3 name">數量</div>
+          <div class="col-md-10 col-sm-9 value">10</div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="qr-code" data-qr-code-content="<%= property_url(property.token) %>"></div>
+      </div>
+    </div>
+  </div>
+
+</div>

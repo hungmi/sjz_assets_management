@@ -1,16 +1,73 @@
-<h1>
-  財產目錄
-  <%= link_to "新增", new_property_path, class: "btn btn-link" %>
-</h1>
-
-<div class="clearfix"></div>
-<table class="table">
-  <tbody>
-    <% @properties.each do |p| %>
-      <tr>
-        <td><%= p.name %></td>
-        <td><%= link_to "修改", edit_property_path(p), class: "btn btn-link" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<h1 class="page-header">財產總覽</h1>
+<!--
+<h2 class="sub-header">放置地點</h2>
+<div class="row placeholders">
+  <div class="col-xs-6 col-sm-3 placeholder">
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+    <h4>總部（二期 8 座）</h4>
+    <span class="text-muted">Something else</span>
+  </div>
+  <div class="col-xs-6 col-sm-3 placeholder">
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+    <h4>一期 1 座</h4>
+    <span class="text-muted">Something else</span>
+  </div>
+  <div class="col-xs-6 col-sm-3 placeholder">
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+    <h4>一期 2 座</h4>
+    <span class="text-muted">Something else</span>
+  </div>
+  <div class="col-xs-6 col-sm-3 placeholder">
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+    <h4>一期 4 座</h4>
+    <span class="text-muted">Something else</span>
+  </div>
+  <div class="col-xs-6 col-sm-3 placeholder">
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+    <h4>一期 6 座</h4>
+    <span class="text-muted">Something else</span>
+  </div>
+  <div class="col-xs-6 col-sm-3 placeholder">
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+    <h4>一期 9 座</h4>
+    <span class="text-muted">Something else</span>
+  </div>
+  <div class="col-xs-6 col-sm-3 placeholder">
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+    <h4>二期 11 座</h4>
+    <span class="text-muted">Something else</span>
+  </div>
+</div>
+-->
+<!-- <h2 class="sub-header">已登記財產</h2> -->
+<% if false %>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>登記名稱</th>
+          <th>登記條碼</th>
+          <th>QR code</th>
+          <th>登記時間</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @properties.each_with_index do |p, index| %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= p.name %></td>
+            <td><%= p.token %></td>
+            <td><%= p.qr_code.html_safe %></td>
+            <td><%= l p.created_at, format: :long %></td>
+            <td><%= link_to "修改", edit_property_path(p.token), class: "btn btn-link" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+  <%= render @properties %>
+  <%= render @properties %>
+<% end %>

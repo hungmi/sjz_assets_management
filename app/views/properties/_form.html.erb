@@ -1,4 +1,4 @@
-<%= simple_form_for @property do |f| %>
+<%= simple_form_for(@property, html: { class: 'form-horizontal' }, url: property_path(@property.token)) do |f| %>
   <%= f.input :name %>
-  <%= f.submit "確認建立", class: "btn btn-primary" %>
+  <%= f.button :submit , class: "btn btn-primary" %>
 <% end %>

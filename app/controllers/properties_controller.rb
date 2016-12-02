@@ -1,4 +1,5 @@
 class PropertiesController < ApplicationController
+  before_action :find_property, only: [:show, :edit, :update, :destroy]
   def index
     @properties = Property.all
   end
@@ -8,7 +9,7 @@ class PropertiesController < ApplicationController
   end
 
   def create
-    @property = Property.new(property_parameters)
+    @property = Property.new(property_params)
     if @property.save
       flash[:success] = "建立成功"
       redirect_to properties_path
@@ -17,9 +18,28 @@ class PropertiesController < ApplicationController
     end
   end
 
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @property.update(property_params)
+      flash[:success] = "更新成功"
+      redirect_to property_path(@property.token)
+    else
+      render :edit
+    end
+  end
+
   private
 
-  def property_parameters
-    params.require(:property).permit(:name)
-  end
+    def find_property
+      @property = Property.find_by_token(params[:id])
+    end
+
+    def property_params
+      params.require(:property).permit(:name)
+    end
 end

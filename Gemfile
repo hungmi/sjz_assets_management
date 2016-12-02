@@ -61,3 +61,5 @@ gem 'simple_form'
 gem 'pg'
 gem 'fastclick-rails'
 gem "select2-rails"
+gem 'rqrcode'
+gem "barby"

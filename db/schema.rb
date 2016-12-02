@@ -17,6 +17,11 @@ ActiveRecord::Schema.define(version: 20161114033332) do
 
   create_table "properties", force: :cascade do |t|
     t.string   "name"
+    t.string   "spec"
+    t.string   "quantity"
+    t.string   "unit"
+    t.string   "token"
+    t.text     "qr_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,24 @@
+@media (min-width: 992px) and (max-width: 1199px) {
+  .sidebar {
+    min-width: 100px;
+  }
+}
+@media (min-width: 768px) {
+  .sidebar {
+    top: 60px;
+    background-color: #3f4853;
+    padding-top: 0px;
+    .nav-sidebar {
+      & > .active > a {
+        background-color: #262e38;
+        color: #c1c6cc;
+      }
+      & > li > a {
+        color: #a2a6ae;
+        &:hover {
+          background-color: #262e38;
+        }
+      }
+    }
+  }
+}
