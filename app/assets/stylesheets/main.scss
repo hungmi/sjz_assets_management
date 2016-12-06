@@ -1,0 +1,41 @@
+body, html {
+  font-family: "Hiragino Sans GB","华文细黑","STHeiti","微软雅黑","Microsoft YaHei",SimHei,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+
+.text-truncate {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-y: hidden;
+}
+
+.material-icons {
+  font-size: 26px;
+  vertical-align: middle;
+}
+
+@media print
+{
+  * {
+    display: none !important;
+  }  
+  .printable, .printable * {
+    display: block !important;
+  }
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.turbolinks-progress-bar {
+  height: 2px;
+  background-color: red;
+}
+
+.page-header {
+  border-bottom: 1px solid #ccc;
+}
+
+.dropdown-menu {
+  min-width: 7rem;
+}

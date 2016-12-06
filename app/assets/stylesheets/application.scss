@@ -1,74 +1,7 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- */
-
-@import "bootstrap-sprockets";
+@import "variables";
 @import "bootstrap";
-@import "select2";
-@import "select2-bootstrap";
-@import "bootstrap-datepicker3";
-@import "dashboard";
+// @import "select2";
+// @import "select2-bootstrap";
+@import "main";
 @import "nav";
-@import "sidebar";
 @import "properties";
-
-
-$primary-color: dodgerblue;
-
-body, html {
-  font-family: "Hiragino Sans GB","华文细黑","STHeiti","微软雅黑","Microsoft YaHei",SimHei,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
-}
-
-.text-truncate {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow-y: hidden;
-}
-
-.btn-primary {
-  border-radius: 0px;
-  background-color: $primary-color;
-  color: white;
-  border: none;
-  &:hover {
-    background-color: #488ac3;
-  }
-}
-
-a {
-  color: $primary-color;
-}
-
-.material-icons {
-  font-size: 26px;
-  vertical-align: middle;
-}
-
-@media print
-{
-  * {
-    display: none !important;
-  }  
-  .printable, .printable * {
-    display: block !important;
-  }
-}
-
-.clickable {
-  cursor: pointer;
-}
-
-.turbolinks-progress-bar {
-  height: 2px;
-  background-color: red;
-}

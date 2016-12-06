@@ -27,7 +27,7 @@ class PropertiesController < ApplicationController
   def update
     if @property.update(property_params)
       flash[:success] = "更新成功"
-      redirect_to property_path(@property.token)
+      redirect_to properties_path
     else
       render :edit
     end

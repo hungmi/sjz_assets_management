@@ -6,7 +6,7 @@ document.addEventListener("turbolinks:load", function(){
     $(this).qrcode($(this).data("qr-code-content"))
   })
   Holder.addTheme("sjz", {
-    bg: "#3f4853", fg: "#3ac5d9", size: 14
+    bg: "#2b3a4e", fg: "dodgerblue", size: 14
   })
   Holder.run()
   // svg4everybody();

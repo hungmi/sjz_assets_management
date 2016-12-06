@@ -12,16 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-sprockets
+//= require tether
+//= require bootstrap
 //= require jquery.qrcode.min
-//= require fastclick
 //= require select2
-//= require bootstrap-datepicker/core
-//= require bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.js
 //= require app_init
 //= require holder.min
 //= require turbolinks
-
-document.addEventListener("turbolinks:load", function(){
-  return new FastClick(document.body);
-})

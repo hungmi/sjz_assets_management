@@ -1,5 +1,9 @@
 zh-CN:
   activerecord:
+    attributes:
+      property:
+        token: "財產編碼"
+        name: "登記名稱"
     errors:
       messages:
         record_invalid: "验证失败: %{errors}"

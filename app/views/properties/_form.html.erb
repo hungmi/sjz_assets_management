@@ -1,4 +1,21 @@
-<%= simple_form_for(@property, html: { class: 'form-horizontal' }, url: property_path(@property.token)) do |f| %>
-  <%= f.input :name %>
-  <%= f.button :submit , class: "btn btn-primary" %>
+<%= form_for(@property, html: { class: "col-xs-12 offset-md-3 col-md-6" }, url: property_path(@property.token)) do |f| %>
+  <div class="form-group row">
+    <%= f.label :token, class: "col-xs-4 col-form-label" %>
+    <div class="col-xs-8">
+      <p class="form-control-static mb-0"><%= @property.token %></p>
+    </div>
+  </div>
+  <div class="form-group row">
+    <%= f.label :name, class: "col-xs-4 col-form-label" %>
+    <div class="col-xs-8">
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-xs-4 col-form-label" for="property_name">使用人</label>
+    <div class="col-xs-8">
+      <%= select_tag :person, options_for_select(["謝沛廷", "蔡鴻銘"], "謝沛廷"), class: "form-control" %>
+    </div>
+  </div>
+  <%= f.submit class: "btn btn-primary btn-block" %>
 <% end %>

@@ -52,14 +52,12 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'bootstrap-sass'
-gem 'bootstrap-datepicker-rails'
+gem 'bootstrap', '~> 4.0.0.alpha5'
+gem 'rails-assets-tether', '>= 1.1.0'
 gem 'awesome_rails_console'
 gem 'mini_magick'
 gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
-gem 'simple_form'
 gem 'pg'
-gem 'fastclick-rails'
 gem "select2-rails"
 gem 'rqrcode'
 gem "barby"

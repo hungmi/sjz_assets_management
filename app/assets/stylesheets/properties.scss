@@ -1,89 +1,46 @@
-.card {
-  margin-bottom: 20px;
-  img {
-    width: 100%;
-  }
-  .content {
-    hr {
-      border-color: #999;
+.properties {
+  .item {
+    margin-bottom: 20px;
+    img {
+      width: 100%;
     }
-    .title {
-      font-size: 22px;
-      // font-weight: bold;
-      .actions.dropdown {
-        .dropdown-toggle {
-          color: dodgerblue;
-        }
-        .dropdown-menu {
-          min-width: 100px;
-        }
+    .content {
+      hr {
+        border-color: #999;
       }
-    }
-    .properties {
-      font-weight: normal;
-      line-height: 29px;
-      .name {
-        font-size: 14px;
-        @media (max-width: 992px) {
-          font-size: 12px;
+      .title {
+        @media (max-width: 768px) {
+          margin-top: 1rem;
+        }
+        font-size: 22px;
+        .actions.dropdown {
+          .dropdown-toggle {
+            color: dodgerblue;
+          }
+          .dropdown-menu {
+            min-width: 100px;
+          }
         }
       }
-      .value {
-        white-space: nowrap;
-        font-weight: bold;
-        font-size: 18px;
-        padding-right: 10px;
+      .properties {
+        font-weight: normal;
+        line-height: 29px;
+        .name {
+          font-size: 14px;
+          @media (max-width: 992px) {
+            font-size: 12px;
+          }
+        }
+        .value {
+          white-space: nowrap;
+          font-weight: bold;
+          font-size: 18px;
+          padding-right: 10px;
+        }
       }
     }
-  }
-  .qr-code canvas {
-    width: 100%;
-  }
-}
-
-.property.card.horizontal {
-  // display: inline-flex;
-}
-
-.property.card.vertical {
-  .img-wrapper {
-    position: relative;
-    .actions.dropdown {
-      position: absolute;
-      top: 6px;
-      right: 6px;
-      .dropdown-toggle {
-        color: dodgerblue;
-      }
-      .dropdown-menu {
-        min-width: 100px;
-      }
+    .qr-code canvas {
+      width: 100%;
     }
   }
-  .token, .quantity {
-    font-size: 20px;
-    font-weight: bold;
-  }
-  table.properties {
-    tr {
-      height: 35px;
-    }
-    th {
-      white-space: nowrap;
-      font-size: 14px;
-      font-weight: normal;
-      padding-right: 10px;
-    }
-  }
-  .qr-code canvas {
-    width: 90%;
-    height: 90%;
-    padding: 5% 0;
-  }
-  // @media only screen and (min-width: 992px) {
-  //   .actions a {
-  //     padding: 5px 10px;
-  //     font-size: 12px;
-  //   }
-  // }
 }
