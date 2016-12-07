@@ -28,6 +28,7 @@ set :pty, true
 set :keep_releases, 5
 
 # Puma:
+app_dir = File.expand_path("../..", __FILE__)
 set :puma_conf, "#{app_dir}/shared/config/puma.rb"
  
 namespace :deploy do
