@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :property do
+  factory :item do
     name "MyString"
   end
 end

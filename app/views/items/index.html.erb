@@ -13,20 +13,20 @@
         </tr>
       </thead>
       <tbody>
-        <% @properties.each_with_index do |p, index| %>
+        <% @items.each_with_index do |p, index| %>
           <tr>
             <td><%= index + 1 %></td>
             <td><%= p.name %></td>
             <td><%= p.token %></td>
             <td><%= p.qr_code.html_safe %></td>
             <td><%= l p.created_at, format: :long %></td>
-            <td><%= link_to "修改", edit_property_path(p.token), class: "btn btn-link" %></td>
+            <td><%= link_to "修改", edit_item_path(p.token), class: "btn btn-link" %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
   </div>
 <% else %>
-  <%= render @properties %>
-  <%= render @properties %>
+  <%= render @items %>
+  <%= render @items %>
 <% end %>

@@ -1,22 +1,22 @@
 <h1 class="text-hide">Custom heading</h1>
-<div class="item property clearfix">
+<div class="item clearfix">
   <div class="img-wrapper col-md-4">
     <%#= image_tag "http://cms-bucket.nosdn.127.net/catchpic/b/b0/b073d08314a480c6b19454a8d4612107.jpg?imageView&thumbnail=550x0" %>
     <img data-src="holder.js/100px200?theme=sjz&text=尚未上傳">
   </div>
   <div class="content printable col-md-8">
     <div class="title">
-      <%= property.name %>
+      <%= item.name %>
       <div class="dropdown float-xs-right">
         <a href="#" class="dropdown-toggle ml-3 pl-2" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
           <!-- <i class="material-icons">expand_more</i> -->
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <%= link_to "修改資料", edit_property_path(property.token), class: "dropdown-item" %>
-          <%= link_to "申請使用", edit_property_path(property.token), class: "dropdown-item" %>
-          <%= link_to "所在位置", edit_property_path(property.token), class: "dropdown-item" %>
-          <%= link_to "盤點紀錄", edit_property_path(property.token), class: "dropdown-item" %>
-          <%= link_to "列印標籤", edit_property_path(property.token), class: "dropdown-item" %>
+          <%= link_to "修改資料", edit_item_path(item.token), class: "dropdown-item" %>
+          <%= link_to "申請使用", edit_item_path(item.token), class: "dropdown-item" %>
+          <%= link_to "所在位置", edit_item_path(item.token), class: "dropdown-item" %>
+          <%= link_to "盤點紀錄", edit_item_path(item.token), class: "dropdown-item" %>
+          <%= link_to "列印標籤", edit_item_path(item.token), class: "dropdown-item" %>
         </div>
       </div>
     </div>
@@ -25,7 +25,7 @@
       <div class="col-md-9">
         <div class="row">
           <div class="col-md-2 col-xs-3 name">編碼</div>
-          <div class="col-md-10 col-xs-9 value"><%= property.token %></div>
+          <div class="col-md-10 col-xs-9 value"><%= item.token %></div>
         </div>
         <div class="row">
           <div class="col-md-2 col-xs-3 name">使用人</div>
@@ -38,9 +38,6 @@
           <div class="col-md-10 col-xs-9 value">10</div>
         </div>
       </div>
-      <!-- <div class="col-md-3">
-        <div class="qr-code" data-qr-code-content="<%#= property_url(property.token) %>"></div>
-      </div> -->
     </div>
   </div>
 

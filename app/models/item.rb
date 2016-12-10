@@ -1,4 +1,4 @@
-class Property < ApplicationRecord
+class Item < ApplicationRecord
   validates :name, presence: true
 
   include Tokenable

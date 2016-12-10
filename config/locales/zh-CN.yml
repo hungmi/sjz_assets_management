@@ -1,7 +1,7 @@
 zh-CN:
   activerecord:
     attributes:
-      property:
+      item:
         token: "財產編碼"
         name: "登記名稱"
     errors:
@@ -151,7 +151,7 @@ zh-CN:
       create: 新增%{model}
       submit: 储存%{model}
       update: 更新%{model}
-      property:
+      item:
         create: 確定登記財產
         submit: 储存財產資料
         update: 更新財產資料
