@@ -9,5 +9,6 @@ document.addEventListener("turbolinks:load", function(){
     bg: "#2b3a4e", fg: "dodgerblue", size: 14
   })
   Holder.run()
+  $(".select2").select2()
   // svg4everybody();
 })

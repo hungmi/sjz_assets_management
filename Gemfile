@@ -66,5 +66,5 @@ gem 'mini_magick'
 gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
 gem 'pg'
 gem "select2-rails"
-gem 'rqrcode'
-gem "barby"
+# gem 'rqrcode'
+# gem "barby", '0.6.4'

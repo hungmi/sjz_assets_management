@@ -14,7 +14,7 @@
   <div class="form-group row">
     <label class="col-xs-4 col-form-label" for="item_name">使用人</label>
     <div class="col-xs-8">
-      <%= select_tag :person, options_for_select(["謝沛廷", "蔡鴻銘"], "謝沛廷"), class: "form-control" %>
+      <%= f.select :employee_id, grouped_options_for_select(company_people_options), {}, class: "form-control select2" %>
     </div>
   </div>
   <%= f.submit class: "btn btn-primary btn-block" %>

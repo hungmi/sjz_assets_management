@@ -1,7 +1,38 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+company = [
+  {
+    Department: { name: "行政部" },
+    Employees: [
+      { name: "謝沛廷" },
+      { name: "蔡鴻銘" },
+      { name: "吳惠娟" },
+      { name: "吳麗儀" },
+      { name: "梁素晶" }
+    ]
+  },
+  {
+    Department: { name: "財務部" },
+    Employees: [
+      { name: "陈玉玲" },
+      { name: "蔡颖华" },
+      { name: "陆玉桃" },
+      { name: "陈玉翠" },
+      { name: "廖雪萍" },
+      { name: "陈转娥" }
+    ]
+  }
+]
+
+company.each do |part|
+  department = Department.create part[:Department]
+  department.employees.create part[:Employees]
+end
+
+for i in 1..10 do
+  item = Item.create({
+    name: "Star Wars #{i}",
+    spec: "",
+    quantity: "",
+    department_id: rand(1..Department.all.size),
+    employee_id: rand(1..Employee.all.size)
+  })
+end

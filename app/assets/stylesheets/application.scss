@@ -1,7 +1,16 @@
 @import "variables";
 @import "bootstrap-custom";
-// @import "select2";
+@import "select2";
 // @import "select2-bootstrap";
 @import "main";
 @import "nav";
 @import "items";
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  padding: .375rem 1.75rem .375rem .75rem;
+  line-height: 24px;
+}
+.select2-container .select2-selection--single,
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: calc(2.5rem - 2px);
+}

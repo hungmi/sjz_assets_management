@@ -13,15 +13,15 @@ body, html {
   vertical-align: middle;
 }
 
-@media print
-{
-  * {
-    display: none !important;
-  }  
-  .printable, .printable * {
-    display: block !important;
-  }
-}
+// @media print
+// {
+//   * {
+//     display: none !important;
+//   }  
+//   .printable, .printable * {
+//     display: block !important;
+//   }
+// }
 
 .clickable {
   cursor: pointer;
