@@ -32,11 +32,11 @@ ActiveRecord::Schema.define(version: 20161209092356) do
 
   create_table "items", force: :cascade do |t|
     t.string   "name"
-    t.string   "spec"
+    t.text     "spec"
     t.string   "quantity"
     t.string   "unit"
     t.string   "token"
-    t.text     "qr_code"
+    t.string   "image"
     t.integer  "department_id"
     t.integer  "employee_id"
     t.datetime "created_at",    null: false

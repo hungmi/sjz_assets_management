@@ -1,4 +1,14 @@
-.items {
+.items, .employee_items, .department_items {
+  .form-control-file {
+    padding: 4px 4px;
+    cursor: pointer;
+    width: 100%;
+    border: 1px solid #fff;
+    border-radius: 0.25rem;
+    &:hover {
+      border-color: $brand-primary;  
+    }
+  }
   .item {
     margin-bottom: 20px;
     img {
@@ -7,9 +17,12 @@
     .content {
       hr {
         border-color: #999;
+        @media (max-width: 768px) {
+          margin: 0.5rem 0 !important;
+        }
       }
       .title {
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
           margin-top: 1rem;
         }
         font-size: 22px;
@@ -19,6 +32,8 @@
           }
           .dropdown-menu {
             min-width: 100px;
+            right: 0;
+            left: initial;
           }
         }
       }
@@ -32,9 +47,14 @@
           }
         }
         .value {
-          white-space: nowrap;
+          &:not(.multiline) {
+            white-space: nowrap;
+          }
           font-weight: bold;
           font-size: 18px;
+          @media (max-width: 768px) {
+            font-size: 16px;
+          }
           padding-right: 10px;
         }
       }

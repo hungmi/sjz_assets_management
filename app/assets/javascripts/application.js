@@ -16,6 +16,5 @@
 //= require bootstrap
 //= require jquery.qrcode.min
 //= require select2
-//= require app_init
-//= require holder.min
 //= require turbolinks
+//= require app_init

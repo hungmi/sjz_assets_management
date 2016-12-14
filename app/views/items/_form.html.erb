@@ -1,4 +1,29 @@
-<%= form_for(@item, html: { class: "col-xs-12 offset-md-3 col-md-6" }, url: item_path(@item.token)) do |f| %>
+<%= form_for(@item, html: { class: "col-xs-12 offset-md-2 col-md-8 offset-lg-3 col-lg-6" }, url: item_path(@item.token)) do |f| %>
+  <% if f.object.image.present? %>
+    <%= image_tag f.object.image, class: "img-fluid mb-2" %>
+    <div class="alert alert-danger" role="alert">
+      <strong>溫馨提示：</strong> 上傳新圖片將會覆蓋原有圖片。
+    </div>
+  <% end %>
+  <img id="target" class="img-fluid mb-2"/>
+  <div class="form-group row">
+    <%= f.label :image, class: "col-xs-4 col-form-label" %>
+    <div class="col-xs-8">
+      <%= f.file_field :image, class: "form-control-file" %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <%= f.label :department_id, class: "col-xs-4 col-form-label" %>
+    <div class="col-xs-8">
+      <%= f.collection_select :department_id, @departments, :id, :name, {}, class: "form-control select2" %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <%= f.label :employee_id, class: "col-xs-4 col-form-label" %>
+    <div class="col-xs-8">
+      <%= f.select :employee_id, grouped_options_for_select(company_people_options, @item.employee_id), {}, class: "form-control select2" %>
+    </div>
+  </div>
   <div class="form-group row">
     <%= f.label :token, class: "col-xs-4 col-form-label" %>
     <div class="col-xs-8">
@@ -12,10 +37,37 @@
     </div>
   </div>
   <div class="form-group row">
-    <label class="col-xs-4 col-form-label" for="item_name">使用人</label>
-    <div class="col-xs-8">
-      <%= f.select :employee_id, grouped_options_for_select(company_people_options), {}, class: "form-control select2" %>
+    <%= f.label :quantity, class: "col-xs-4 col-form-label" %>
+    <div class="col-xs-4">
+      <%= f.text_field :quantity, class: "form-control" %>
+    </div>
+    <div class="col-xs-4">
+      <%= f.text_field :unit, value: "個", class: "form-control" %>
     </div>
   </div>
+  <div class="form-group row">
+    <%= f.label :spec, class: "col-xs-4 col-form-label" %>
+    <div class="col-xs-8">
+      <%= f.text_area :spec, class: "form-control" %>
+    </div>
+  </div>
+  
   <%= f.submit class: "btn btn-primary btn-block" %>
 <% end %>
+<script type="text/javascript">
+  function showImage(src,target) {
+    var fr=new FileReader();
+    // when image is loaded, set the src of the image where you want to display it
+    fr.onload = function(e) {
+      target.src = this.result;
+    };
+    src.addEventListener("change",function() {
+      // fill fr with image data    
+      fr.readAsDataURL(src.files[0]);
+    });
+  }
+
+  var src = document.getElementById("item_image");
+  var target = document.getElementById("target");
+  showImage(src,target);
+</script>

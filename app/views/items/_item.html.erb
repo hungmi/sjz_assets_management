@@ -1,14 +1,13 @@
-<h1 class="text-hide">Custom heading</h1>
 <div class="item clearfix">
   <div class="img-wrapper col-md-4">
     <%#= image_tag "http://cms-bucket.nosdn.127.net/catchpic/b/b0/b073d08314a480c6b19454a8d4612107.jpg?imageView&thumbnail=550x0" %>
-    <img data-src="holder.js/100px200?theme=sjz&text=尚未上傳">
+    <%= image_tag responsive_img(item), class: "img-fluid" %>
   </div>
   <div class="content printable col-md-8">
     <div class="title">
       <%= item.name %>
-      <div class="dropdown float-xs-right">
-        <a href="#" class="dropdown-toggle ml-3 pl-2" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+      <div class="actions dropdown float-xs-right">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
           <!-- <i class="material-icons">expand_more</i> -->
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -20,25 +19,46 @@
         </div>
       </div>
     </div>
-    <hr class="mt-1 mb-1 col-sm-8">
+    <hr class="mt-1 mb-1 hidden-sm-down">
     <div class="row properties">
-      <div class="col-md-9">
+      <div class="col-lg-6">
         <div class="row">
-          <div class="col-md-2 col-xs-3 name">編碼</div>
-          <div class="col-md-10 col-xs-9 value"><%= item.token %></div>
+          <div class="col-md-3 col-xs-3 name"><%= Item.human_attribute_name(:token) %></div>
+          <div class="col-md-9 col-xs-9 value"><%= item.token %></div>
         </div>
         <div class="row">
-          <div class="col-md-2 col-xs-3 name">使用人</div>
-          <div class="col-md-10 col-xs-9 value">
-            <%= link_to item.employee.name, root_path %>
+          <div class="col-md-3 col-xs-3 name"><%= Item.human_attribute_name(:department_id) %></div>
+          <div class="col-md-9 col-xs-9 value">
+            <%= link_to item.department.name, department_items_path(item.department.id) %>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-2 col-xs-3 name">數量</div>
-          <div class="col-md-10 col-xs-9 value">10</div>
+          <div class="col-md-3 col-xs-3 name"><%= Item.human_attribute_name(:employee_id) %></div>
+          <div class="col-md-9 col-xs-9 value">
+            <%= link_to item.employee.name, employee_items_path(item.employee.id) %>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <% if item.quantity.present? %>
+          <div class="row">
+            <div class="col-md-3 col-xs-3 name"><%= Item.human_attribute_name(:quantity) %></div>
+            <div class="col-md-9 col-xs-9 value"><%= item.quantity %></div>
+          </div>
+        <% end %>
+        <% if item.spec.present? %>
+          <div class="row">
+            <div class="col-md-3 col-xs-3 name"><%= Item.human_attribute_name(:spec) %></div>
+            <div class="col-md-9 col-xs-9 value multiline"><%= item.spec %></div>
+          </div>
+        <% end %>
+        <div class="row">
+          <div class="col-md-3 col-xs-3 name">更新時間</div>
+          <div class="col-md-9 col-xs-9 value multiline"><%= item.updated_at.strftime("%F %R") %></div>
         </div>
       </div>
     </div>
   </div>
 
 </div>
+<hr class="mt-1 mb-1 hidden-md-up">

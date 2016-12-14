@@ -2,8 +2,14 @@ zh-CN:
   activerecord:
     attributes:
       item:
+        image: "財產圖片"
+        spec: "詳細資訊"
+        quantity: "數量"
+        unit: "單位"
         token: "財產編碼"
         name: "登記名稱"
+        department_id: "歸屬部門"
+        employee_id: "使用人"
     errors:
       messages:
         record_invalid: "验证失败: %{errors}"

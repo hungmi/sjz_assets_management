@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :find_item, only: [:show, :edit, :update, :destroy]
   def index
-    @items = Item.all
+    @items = Item.order(updated_at: :desc)
   end
 
   def new
@@ -22,6 +22,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @departments = Department.all
   end
 
   def update
@@ -40,6 +41,6 @@ class ItemsController < ApplicationController
     end
 
     def item_params
-      params.require(:item).permit(:name, :spec, :quantity, :unit, :token, :qr_code, :department_id, :employee_id)
+      params.require(:item).permit(:name, :spec, :quantity, :unit, :token, :image, :department_id, :employee_id)
     end
 end
