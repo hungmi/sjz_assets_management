@@ -1,7 +1,7 @@
 # Change these
 server '192.168.9.99', roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@example.com:hungmi/sjz_assets_management.git'
+set :repo_url,        'git@github.com:hungmi/sjz_assets_management.git'
 set :application,     'sjz_assets_management'
 set :user,            'deploy'
 set :puma_threads,    [0, 16]
