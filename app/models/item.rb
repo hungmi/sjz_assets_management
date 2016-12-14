@@ -7,5 +7,4 @@ class Item < ApplicationRecord
   belongs_to :employee
 
   include Tokenable
-  # include Scannable
 end
