@@ -67,3 +67,4 @@ gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
 gem 'pg'
 gem "select2-rails"
 gem "browser"
+gem "figaro"
