@@ -1,2 +1,15 @@
-<h1 class="page-header mt-1 mb-2">財產總覽</h1>
-<%= render @items %>
+<h1 class="page-header mt-1 mb-2">
+  財產總覽
+  <%= link_to new_item_path, class: "btn btn-outline-primary float-xs-right icon-btn" do %>
+    <i class="material-icons">add</i>
+    登錄財產
+  <% end %>
+</h1>
+
+<div id="ajax-entree"></div>
+
+<%#= render @items %>
+
+<div id="ajax-appetizer" class="mx-auto text-xs-center" data-url="/items/list">
+  <%= loader "親，為您查找資料中..." %>
+</div>

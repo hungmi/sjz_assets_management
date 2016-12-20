@@ -13,6 +13,25 @@ body, html {
   vertical-align: middle;
 }
 
+a.icon-btn {
+  position: relative;
+  padding-left: 30px;
+  i.material-icons {
+    position: absolute;
+    left: 0.4rem;
+    top: 0.4rem;
+  }
+}
+
+.navbar .form-inline button.btn.btn-outline-primary {
+  border: 1px solid rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.6);
+  &:hover {
+    border: 1px solid white;
+    color: white;
+  }
+}
+
 // @media print
 // {
 //   * {
@@ -32,10 +51,20 @@ body, html {
   background-color: red;
 }
 
-.page-header {
-  border-bottom: 1px solid #ccc;
-}
+// .page-header {
+//   border-bottom: 1px solid #ccc;
+// }
 
 .dropdown-menu {
   min-width: 7rem;
+}
+
+#ajax-appetizer {
+  position: fixed;
+  top: 0;
+  padding: 15%;
+  left: 0;
+  background-color: rgba(255,255,255,0.5);
+  width: 100%;
+  height: 100%;
 }

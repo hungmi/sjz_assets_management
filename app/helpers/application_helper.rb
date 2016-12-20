@@ -1,12 +1,10 @@
 module ApplicationHelper
-  def notice_message
-    if flash.any?
-      alerts = flash.map do |type, message|
-        content_tag :div, class: "alert alert-#{type} mt-1 mb-1" do
-          message
-        end
+  def loader(message=nil)
+    capture do
+      content_tag :div, id: "ajax-appetizer" do
+        concat content_tag :h2, message if message.present?
+        concat image_tag "loader#{rand(1..2)}.gif", class: "img-fluid", style: "max-width: 300px;"
       end
-      alerts.join("\n").html_safe
     end
   end
 end

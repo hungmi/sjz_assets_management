@@ -10,6 +10,13 @@ zh-CN:
         name: "登記名稱"
         department_id: "歸屬部門"
         employee_id: "使用人"
+      employee:
+        title: "職務"
+        name: "姓名"
+        mobile_phone: "手機"
+        tel: "座機"
+        ext: "分機"
+        department_id: "部門"
     errors:
       messages:
         record_invalid: "验证失败: %{errors}"
@@ -113,7 +120,7 @@ zh-CN:
       second: 秒
       year: 年
   errors:
-    format: "%{attribute}%{message}"
+    format: "%{attribute} %{message}"
     messages:
       accepted: 必须是可被接受的
       blank: 不能为空字符

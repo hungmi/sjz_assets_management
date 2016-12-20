@@ -1,0 +1,45 @@
+<%= form_for employee do |f| %>
+  <%= form_errors(employee) %>
+  <div class="form-group row">
+    <%= f.label :department_id, class: "col-xs-4 col-form-label" %>
+    <div class="col-xs-8">
+      <% if @departments.present? %>
+        <%= f.collection_select :department_id, @departments, :id, :name, {}, class: "form-control select2" %>
+      <% else %>
+        <div style="padding: 9px 3px;">
+          尚未建立任何部門
+        <%= link_to "前往建立", new_department_path %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <%= f.label :title, class: "col-xs-4 col-form-label" %>
+    <div class="col-xs-8">
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <%= f.label :name, class: "col-xs-4 col-form-label" %>
+    <div class="col-xs-8">
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <%= f.label :mobile_phone, class: "col-xs-4 col-form-label" %>
+    <div class="col-xs-8">
+      <%= f.text_field :mobile_phone, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <%= f.label :tel, class: "col-xs-4 col-form-label" %>
+    <div class="col-xs-5">
+      <%= f.text_field :tel, class: "form-control" %>
+    </div>
+    <div class="col-xs-3">
+      <%= f.text_field :ext, placeholder: "分機", class: "form-control" %>
+    </div>
+  </div>
+  <%= hidden_field_tag :employee_id, f.object.id %>
+  <%#= f.submit class: "btn btn-primary btn-block" %>
+<% end %>

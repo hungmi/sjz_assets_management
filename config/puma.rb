@@ -1,11 +1,13 @@
 # Change to match your CPU core count
-workers 4
+workers 1
 
 # Min and Max threads per worker
 threads 1, 8
 
 # Specifies the `port` that Puma will listen on to receive requests, default is 3000.
 # port        ENV.fetch("PORT") { 3000 }
+
+worker_timeout 600
 
 app_dir = File.expand_path("../..", __FILE__)
 # shared_dir = "#{app_dir}/shared"

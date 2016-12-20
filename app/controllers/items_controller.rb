@@ -4,8 +4,14 @@ class ItemsController < ApplicationController
     @items = Item.order(updated_at: :desc)
   end
 
+  def list
+    @items = Item.order(updated_at: :desc)
+    render partial: @items
+  end
+
   def new
     @item = Item.new
+    @departments = Department.all
   end
 
   def create
@@ -16,6 +22,12 @@ class ItemsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def upload
+    Item.import_items(params[:item_file])
+    flash[:success] = "匯入成功"
+    redirect_to items_path
   end
 
   def show

@@ -1,0 +1,52 @@
+<h1 class="page-header mt-1 mb-2">
+  人員總覽
+  <%= link_to upload_employees_path, class: "btn btn-outline-primary float-xs-right icon-btn", data: { toggle: "modal", target: "#uploadEmployees" } do %>
+    <i class="material-icons">add</i>
+    上傳人事資料
+  <% end %>
+</h1>
+<%= render "common/modal", modal_id: "uploadEmployees", title: "請選擇人事表", btn: "開始上傳" do %>
+  <% form_tag upload_employees_path, multipart: true do %>
+    <% file_field_tag :employee_file %>
+  <% end %>
+<% end %>
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead class="thead-default">
+      <th style="min-width: 120px;">部門</th>
+      <th style="min-width: 110px;">職務</th>
+      <th style="min-width: 100px;">姓名</th>
+      <th>手機</th>
+      <th>座機</th>
+      <th>分機</th>
+      <th></th>
+    </thead>
+    <tbody class="tbody-employees" id="ajax-entree">
+      <%#= render @employees %>
+      <%#= loader "親，為您查找資料中..." %>
+    </tbody>
+  </table>
+</div>
+
+<div id="ajax-appetizer" class="mx-auto text-xs-center" data-url="/employees/list">
+  <%= loader "親，為您查找資料中..." %>
+</div>
+
+<%= render "common/modal", modal_id: "editEmployee", title: "編輯資料", btn: "儲存", remote: true %>
+
+<script type="text/javascript">
+  $(".tbody-employees").on("click", ".clickable.employee", function(){
+    $employee = $(this)
+    $.ajax({
+      url: "employees/" + $(this).data("employee-id") + "/edit",
+      method: "get",
+    }).done(function(data, status, xhr) {
+      // alert("OK")
+      window.data = data
+      window.status = status
+      window.xhr = xhr
+      $("#editEmployee .modal-body").html(data)
+    })
+  })
+</script>

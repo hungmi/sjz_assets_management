@@ -22,8 +22,11 @@ ActiveRecord::Schema.define(version: 20161209092356) do
   end
 
   create_table "employees", force: :cascade do |t|
-    t.string   "name"
     t.string   "title"
+    t.string   "name"
+    t.string   "mobile_phone"
+    t.string   "tel"
+    t.string   "ext"
     t.integer  "department_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false

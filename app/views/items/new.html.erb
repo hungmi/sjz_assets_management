@@ -1,2 +1,14 @@
-<h1>登記財產</h1>
+<h1 class="page-header mt-1 mb-2">
+  登記財產
+  <%= link_to upload_items_path, class: "btn btn-outline-primary float-xs-right icon-btn", data: { toggle: "modal", target: "#uploadItems" } do %>
+    <i class="material-icons">add</i>
+    上傳資產表
+  <% end %>
+</h1>
+<%= render "common/modal", modal_id: "uploadItems", title: "請選擇資產表", btn: "開始上傳" do %>
+  <% form_tag upload_items_path, multipart: true do %>
+    <% file_field_tag :item_file %>
+  <% end %>
+<% end %>
+
 <%= render "form" %>

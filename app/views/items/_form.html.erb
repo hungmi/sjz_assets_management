@@ -1,7 +1,8 @@
-<%= form_for(@item, html: { class: "col-xs-12 offset-md-2 col-md-8 offset-lg-3 col-lg-6" }, url: item_path(@item.token)) do |f| %>
-  <% if f.object.image.present? %>
+<%= form_for(@item, html: { class: "col-xs-12 offset-md-2 col-md-8 offset-lg-3 col-lg-6" }, url: @item.form_url) do |f| %>
+  <%= form_errors(@item) %>
+  <% if @item.image.present? %>
     <%= image_tag f.object.image, class: "img-fluid mb-2" %>
-    <div class="alert alert-danger" role="alert">
+    <div class="alert alert-info" role="alert">
       <strong>溫馨提示：</strong> 上傳新圖片將會覆蓋原有圖片。
     </div>
   <% end %>
@@ -15,7 +16,14 @@
   <div class="form-group row">
     <%= f.label :department_id, class: "col-xs-4 col-form-label" %>
     <div class="col-xs-8">
-      <%= f.collection_select :department_id, @departments, :id, :name, {}, class: "form-control select2" %>
+      <% if @departments.present? %>
+        <%= f.collection_select :department_id, @departments, :id, :name, {}, class: "form-control select2" %>
+      <% else %>
+        <div style="padding: 9px 3px;">
+          尚未建立任何部門
+          <%= link_to "前往建立", new_department_path %>
+        </div>
+      <% end %>
     </div>
   </div>
   <div class="form-group row">
@@ -24,12 +32,14 @@
       <%= f.select :employee_id, grouped_options_for_select(company_people_options, @item.employee_id), {}, class: "form-control select2" %>
     </div>
   </div>
-  <div class="form-group row">
-    <%= f.label :token, class: "col-xs-4 col-form-label" %>
-    <div class="col-xs-8">
-      <p class="form-control-static mb-0"><%= @item.token %></p>
+  <% if @item.persisted? %>
+    <div class="form-group row">
+      <%= f.label :token, class: "col-xs-4 col-form-label" %>
+      <div class="col-xs-8">
+        <p class="form-control-static mb-0"><%= @item.token %></p>
+      </div>
     </div>
-  </div>
+  <% end %>
   <div class="form-group row">
     <%= f.label :name, class: "col-xs-4 col-form-label" %>
     <div class="col-xs-8">
