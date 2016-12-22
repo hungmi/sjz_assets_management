@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :find_item, only: [:show, :edit, :update, :destroy]
   def index
-    @items = Item.order(updated_at: :desc)
+    @items = Item.order(updated_at: :desc).ransack(params[:q]).result
   end
 
   def list

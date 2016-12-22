@@ -70,3 +70,4 @@ gem "select2-rails"
 gem "browser"
 gem "figaro"
 gem 'spreadsheet'
+gem 'ransack'
