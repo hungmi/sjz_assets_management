@@ -2,7 +2,7 @@ class EmployeesController < ApplicationController
   def index
     # @employee = Employee.new
     # @departments = Department.all
-    # @employees = Employee.order(:department_id, :id)
+    @employees = Employee.order(:department_id, :id)
   end
 
   def list

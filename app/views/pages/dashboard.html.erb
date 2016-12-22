@@ -1,16 +1,13 @@
-<h1 class="page-header mt-1 mb-2">控制台</h1>
-
-<div class="row placeholders">
-  <%= link_to items_path do %>
-    <div class="col-xs-6 col-sm-3 placeholder">
-      <%= image_tag "assets-cover2min.jpg" %>
-      <h4>財產管理</h4>
-    </div>
+<div class="docks">
+  <%= link_to items_path, class: "dock flex-wrapper" do %>
+    <div class="img-mask"></div>
+    <%= image_tag "assets-cover2.jpg", class: "img-fluid" %>
+    <h3 class="dock-title content">財產管理</h3>
   <% end %>
-  <%= link_to employees_path do %>
-    <div class="col-xs-6 col-sm-3 placeholder">
-      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==">
-      <h4>人員管理</h4>
-    </div>
+
+  <%= link_to employees_path, class: "dock flex-wrapper" do %>
+    <div class="img-mask"></div>
+    <%= image_tag "assets-cover2.jpg", class: "img-fluid" %>
+    <h3 class="dock-title content">人事管理</h3>
   <% end %>
 </div>

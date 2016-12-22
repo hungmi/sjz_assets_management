@@ -23,15 +23,14 @@
       <th></th>
     </thead>
     <tbody class="tbody-employees" id="ajax-entree">
-      <%#= render @employees %>
-      <%#= loader "親，為您查找資料中..." %>
+      <%= render @employees %>
     </tbody>
   </table>
 </div>
 
-<div id="ajax-appetizer" class="mx-auto text-xs-center" data-url="/employees/list">
-  <%= loader "親，為您查找資料中..." %>
-</div>
+<!-- <div id="ajax-appetizer" class="mx-auto text-xs-center" data-url="/employees/list">
+  <%#= loader "親，為您查找資料中..." %>
+</div> -->
 
 <%= render "common/modal", modal_id: "editEmployee", title: "編輯資料", btn: "儲存", remote: true %>
 

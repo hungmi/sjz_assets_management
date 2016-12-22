@@ -68,3 +68,35 @@ a.icon-btn {
   width: 100%;
   height: 100%;
 }
+
+.img-wrapper {
+  width: 100%;
+  padding-bottom: 56.25%; // 9/16*100%;
+  position: relative;
+  img {
+    position: absolute;
+  }
+}
+
+.flex-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  .content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .img-mask {
+    position: absolute;
+    width: 100%;
+    padding-bottom: 66.8%; // 看圖片比例，所以上傳的時候要固定
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: background-color 0.2s ease-in-out;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+}

@@ -18,10 +18,10 @@ module ItemsImporter
               # p.location = Location.find_or_create_by(name: now_location)
             p.department = Department.find_or_create_by(name: now_department)
               p.employee = Employee.find_or_create_by(name: now_employee)
-                  p.name = row[3].try(:strip)
-                  p.spec = row[4].try(:strip)
-                  p.unit = row[5].try(:strip)
-              p.quantity = row[6].try(:strip)#.to_s[/[0-9]+/]
+                  p.name = row[3].to_s.try(:strip)
+                  p.spec = row[4].to_s.try(:strip)
+                  p.unit = row[5].to_s.try(:strip)
+              p.quantity = row[6].to_i.to_s.try(:strip)#.to_s[/[0-9]+/]
           end
         end
         i += 1
