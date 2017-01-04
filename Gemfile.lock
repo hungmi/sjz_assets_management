@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: https://gems.ruby-china.org/
   specs:
     actioncable (5.0.0.1)
       actionpack (= 5.0.0.1)
@@ -268,7 +268,7 @@ DEPENDENCIES
   bootstrap (~> 4.0.0.alpha5)
   browser
   capistrano (~> 3.6)
-  capistrano-rails (~> 1.1)
+  capistrano-rails (~> 1.2)
   capistrano-rbenv
   capistrano3-puma
   carrierwave (>= 1.0.0.rc, < 2.0)

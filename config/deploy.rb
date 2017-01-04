@@ -7,6 +7,8 @@ set :user,            'deploy'
 set :puma_threads,    [0, 16]
 set :puma_workers,    4
 
+set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
+
 # Don't change these unless you know what you're doing
 set :pty,             true
 set :use_sudo,        false
