@@ -53,7 +53,8 @@ end
 group :development do
   gem 'capistrano', '~> 3.6', require: false
   gem 'capistrano-rails', '~> 1.1', require: false
-  gem 'capistrano-rvm',   require: false
+  # gem 'capistrano-rvm',   require: false
+  gem 'capistrano-rbenv', require: false
   gem 'capistrano3-puma', require: false
 end
 

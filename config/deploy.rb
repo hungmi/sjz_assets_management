@@ -1,5 +1,5 @@
 # Change these
-server '192.168.9.99', roles: [:web, :app, :db], primary: true
+server '123.57.245.154', roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:hungmi/sjz_assets_management.git'
 set :application,     'sjz_assets_management'
