@@ -1,6 +1,7 @@
 <h1 class="page-header mt-1 mb-2">
   部門總覽
-  <%= link_to new_employee_path, class: "btn btn-outline-primary float-xs-right icon-btn" do %>
+  <%= link_to "人員管理", employees_path, class: "btn pb-0" %>
+  <%= link_to new_department_path, class: "btn btn-outline-primary float-xs-right icon-btn" do %>
     <i class="material-icons">add</i>
     建立新部門
   <% end %>
@@ -10,7 +11,7 @@
   <table class="table table-hover">
     <thead class="thead-default">
       <th style="min-width: 120px;">名稱</th>
-      <th style="min-width: 110px;">主管</th>
+      <th style="min-width: 110px;">顯示順序</th>
     </thead>
     <tbody class="ajax-trigger-container">
       <%= render @departments %>

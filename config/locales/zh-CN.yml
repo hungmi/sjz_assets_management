@@ -7,6 +7,9 @@ zh-CN:
       employee:
         one: "人員"
         other: "所有人員"
+      department:
+        one: "部門"
+        other: "所有部門"
     attributes:
       item:
         image: "財產圖片"
@@ -26,6 +29,7 @@ zh-CN:
         department_id: "部門"
       department:
         name: "部門名稱"
+        ordering: "顯示順序"
     errors:
       messages:
         record_invalid: "验证失败: %{errors}"

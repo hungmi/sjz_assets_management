@@ -1,6 +1,16 @@
 class DepartmentsController < ApplicationController
   def index
-    @departments = Department.all
+    @departments = Department.all.order(ordering: :asc, id: :asc)
+  end
+
+  def new
+    @department = Department.new
+  end
+
+  def create
+    @department = Department.create(department_params)
+    flash[:success] = "建立成功"
+    redirect_to departments_path
   end
 
   def edit
@@ -20,6 +30,6 @@ class DepartmentsController < ApplicationController
   private
 
   def department_params
-    params.require(:department).permit(:name)
+    params.require(:department).permit(:name, :ordering)
   end
 end
