@@ -13,7 +13,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="responsiveNavbarDropdown">
           <a class="dropdown-item" href="/items">財產管理</a>
-          <!-- <a class="dropdown-item" href="/departments">部門管理</a> -->
+          <a class="dropdown-item" href="/departments">部門管理</a>
           <a class="dropdown-item" href="/employees">人員管理</a>
         </div>
       </li>
@@ -32,7 +32,7 @@
       </li> -->
     </ul>
     <%= form_tag items_path, class: "form-inline float-lg-right", method: :get do |f| %>
-      <%= text_field_tag "q[name_or_token_or_department_name_cont]", params[:q].present? ? params[:q][:name_or_token_or_department_name_cont] : "", placeholder: "編碼、名稱或位置", class: "form-control" %>
+      <%= text_field_tag "q[name_or_token_or_department_name_cont]", params[:q].present? ? params[:q][:name_or_token_or_department_name_cont] : "", placeholder: "編碼、名稱或位置", class: "form-control", id: "search-form-input" %>
       <%= button_tag "搜尋", class: "btn btn-outline-primary", value: "search" %>
     <% end %>
   </div>

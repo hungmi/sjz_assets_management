@@ -5,6 +5,7 @@
     上傳資產表
   <% end %>
 </h1>
+
 <%= render "common/modal", modal_id: "uploadItems", title: "請選擇資產表", btn: "開始上傳" do %>
   <% form_tag upload_items_path, multipart: true do %>
     <% file_field_tag :item_file %>

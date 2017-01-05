@@ -10,6 +10,11 @@ class EmployeesController < ApplicationController
     render partial: @employees
   end
 
+  def new
+    @departments = Department.all
+    @employee = Employee.new
+  end
+
   def create
     @employee = Employee.create(employee_params)
     flash[:success] = "建立成功"
@@ -17,6 +22,7 @@ class EmployeesController < ApplicationController
   end
 
   def edit
+    @departments = Department.all
     @employee = Employee.find(params[:id])
     # form = render_to_string partial: "/employees/form", locals: { employee: @employee }
     # render json: form

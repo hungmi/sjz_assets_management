@@ -1,15 +1,10 @@
 <h1 class="page-header mt-1 mb-2">
   人員總覽
-  <%= link_to upload_employees_path, class: "btn btn-outline-primary float-xs-right icon-btn", data: { toggle: "modal", target: "#uploadEmployees" } do %>
+  <%= link_to new_employee_path, class: "btn btn-outline-primary float-xs-right icon-btn" do %>
     <i class="material-icons">add</i>
-    上傳人事資料
+    登錄人事資料
   <% end %>
 </h1>
-<%= render "common/modal", modal_id: "uploadEmployees", title: "請選擇人事表", btn: "開始上傳" do %>
-  <% form_tag upload_employees_path, multipart: true do %>
-    <% file_field_tag :employee_file %>
-  <% end %>
-<% end %>
 
 <div class="table-responsive">
   <table class="table table-hover">
@@ -22,7 +17,7 @@
       <th>分機</th>
       <th></th>
     </thead>
-    <tbody class="tbody-employees" id="ajax-entree">
+    <tbody class="ajax-trigger-container">
       <%= render @employees %>
     </tbody>
   </table>
@@ -32,20 +27,4 @@
   <%#= loader "親，為您查找資料中..." %>
 </div> -->
 
-<%= render "common/modal", modal_id: "editEmployee", title: "編輯資料", btn: "儲存", remote: true %>
-
-<script type="text/javascript">
-  $(".tbody-employees").on("click", ".clickable.employee", function(){
-    $employee = $(this)
-    $.ajax({
-      url: "employees/" + $(this).data("employee-id") + "/edit",
-      method: "get",
-    }).done(function(data, status, xhr) {
-      // alert("OK")
-      window.data = data
-      window.status = status
-      window.xhr = xhr
-      $("#editEmployee .modal-body").html(data)
-    })
-  })
-</script>
+<%= render "common/modal", model_name: "Employee", remote: true %>

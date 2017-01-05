@@ -1,5 +1,12 @@
 zh-CN:
   activerecord:
+    models:
+      item:
+        one: "財產"
+        other: "所有財產"
+      employee:
+        one: "人員"
+        other: "所有人員"
     attributes:
       item:
         image: "財產圖片"
@@ -17,6 +24,8 @@ zh-CN:
         tel: "座機"
         ext: "分機"
         department_id: "部門"
+      department:
+        name: "部門名稱"
     errors:
       messages:
         record_invalid: "验证失败: %{errors}"
@@ -164,10 +173,6 @@ zh-CN:
       create: 新增%{model}
       submit: 储存%{model}
       update: 更新%{model}
-      item:
-        create: 確定登記財產
-        submit: 储存財產資料
-        update: 更新財產資料
   number:
     currency:
       format:

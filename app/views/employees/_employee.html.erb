@@ -1,4 +1,4 @@
-<tr class="clickable employee <%= department_color(employee.department) %>" data-toggle="modal" data-target="#editEmployee" data-employee-id="<%= employee.id %>">
+<tr class="clickable ajax-trigger <%= department_color(employee.department) %>" <%= ajax_edit(employee) %>>
   <td><%= employee.department.name %></td>
   <td><%= employee.title %></td>
   <td><%= employee.name %></td>
