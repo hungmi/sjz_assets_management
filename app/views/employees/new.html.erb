@@ -6,7 +6,7 @@
   <% end %>
 </h1>
 
-<%= render "common/modal", modal_id: "uploadEmployees", title: "請選擇人事表", btn: "開始上傳" do %>
+<%= render layout: "common/modal", locals: { modal_id: "uploadEmployees", title: "請選擇人事表", btn: "開始上傳" } do %>
   <% form_tag upload_employees_path, multipart: true do %>
     <% file_field_tag :employee_file %>
   <% end %>

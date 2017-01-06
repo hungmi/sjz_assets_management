@@ -60,21 +60,23 @@
 </div><!-- /.modal -->
 
 <script type="text/javascript">
-  $(".ajax-trigger-container").on("click", ".clickable.ajax-trigger", function(){
-    $model = $(this)
-    $.ajax({
-      url: $model.data("url"),
-      method: "get",
-    }).done(function(data, status, xhr) {
-      // alert("OK")
-      window.data = data
-      window.status = status
-      window.xhr = xhr
-      $('<%= "##{modal_id}" %> .modal-body').html(data)
-      $form = $('<%= "##{modal_id}" %>').find("form")
-      $form.append('<input type="hidden" name="model_id" id="model_id" value="' + $model.data('model-id') + '">')
+  <% if remote %>
+    $(".ajax-trigger-container").on("click", ".clickable.ajax-trigger", function(){
+      $model = $(this)
+      $.ajax({
+        url: $model.data("url"),
+        method: "get",
+      }).done(function(data, status, xhr) {
+        // alert("OK")
+        window.data = data
+        window.status = status
+        window.xhr = xhr
+        $('<%= "##{modal_id}" %> .modal-body').html(data)
+        $form = $('<%= "##{modal_id}" %>').find("form")
+        $form.append('<input type="hidden" name="model_id" id="model_id" value="' + $model.data('model-id') + '">')
+      })
     })
-  })
+  <% end %>
 
   $btn = $('<%= "##{modal_id}" %>').find("button.submit-btn")
   $btn.on("click", function(e){
