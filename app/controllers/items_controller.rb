@@ -49,10 +49,10 @@ class ItemsController < ApplicationController
   private
 
     def find_item
-      @item = Item.find_by_token(params[:id])
+      @item = Item.find(params[:id])
     end
 
     def item_params
-      params.require(:item).permit(:name, :spec, :quantity, :unit, :token, :image, :department_id, :employee_id)
+      params.require(:item).permit(:name, :spec, :quantity, :unit, :image, :department_id, :employee_id)
     end
 end

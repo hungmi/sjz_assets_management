@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20161209092356) do
 
   create_table "departments", force: :cascade do |t|
     t.string   "name"
-    t.integer  "ordering",   default: 0
+    t.integer  "ordering",   default: 1
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 20161209092356) do
     t.text     "spec"
     t.string   "quantity"
     t.string   "unit"
-    t.string   "token"
     t.string   "image"
     t.integer  "department_id"
     t.integer  "employee_id"

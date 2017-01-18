@@ -11,7 +11,7 @@ class ItemImageUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.token}"
+    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
@@ -25,6 +25,7 @@ class ItemImageUploader < CarrierWave::Uploader::Base
 
   process :auto_orientation #this should go before any other process
   process :optimize
+  process :quality => 65
 
   def auto_orientation
     manipulate! do |img|
@@ -51,6 +52,10 @@ class ItemImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
+  # version :original do
+  #   process :quality => 65
+  # end
+
   version :small do
     process resize_to_fill: [640, 360]
   end

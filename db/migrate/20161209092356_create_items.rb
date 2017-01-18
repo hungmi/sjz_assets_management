@@ -5,7 +5,7 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.text :spec
       t.string :quantity
       t.string :unit
-      t.string :token
+      # t.string :token
       # t.text :qr_code
       t.string :image
       t.belongs_to :department, foreign_key: true, index: true

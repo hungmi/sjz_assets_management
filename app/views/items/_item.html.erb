@@ -13,11 +13,11 @@
           <!-- <i class="material-icons">expand_more</i> -->
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <%= link_to "修改資料", edit_item_path(item.token), class: "dropdown-item" %>
-          <%= link_to "申請使用", edit_item_path(item.token), class: "dropdown-item" %>
-          <%= link_to "所在位置", edit_item_path(item.token), class: "dropdown-item" %>
-          <%= link_to "盤點紀錄", edit_item_path(item.token), class: "dropdown-item" %>
-          <%= link_to "列印標籤", edit_item_path(item.token), class: "dropdown-item" %>
+          <%= link_to "修改資料", edit_item_path(item), class: "dropdown-item" %>
+          <%= link_to "申請使用", edit_item_path(item), class: "dropdown-item" %>
+          <%= link_to "所在位置", edit_item_path(item), class: "dropdown-item" %>
+          <%= link_to "盤點紀錄", edit_item_path(item), class: "dropdown-item" %>
+          <%= link_to "列印標籤", edit_item_path(item), class: "dropdown-item" %>
         </div>
       </div>
     </div>
@@ -25,8 +25,8 @@
     <div class="row properties">
       <div class="col-lg-6">
         <div class="row">
-          <div class="col-md-3 col-xs-3 name"><%= Item.human_attribute_name(:token) %></div>
-          <div class="col-md-9 col-xs-9 value"><%= item.token %></div>
+          <div class="col-md-3 col-xs-3 name"><%= Item.human_attribute_name(:id) %></div>
+          <div class="col-md-9 col-xs-9 value"><%= item.id %></div>
         </div>
         <div class="row">
           <div class="col-md-3 col-xs-3 name"><%= Item.human_attribute_name(:department_id) %></div>

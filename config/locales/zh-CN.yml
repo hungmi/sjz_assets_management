@@ -16,7 +16,7 @@ zh-CN:
         spec: "詳細資訊"
         quantity: "數量"
         unit: "單位"
-        token: "財產編碼"
+        id: "財產編碼"
         name: "登記名稱"
         department_id: "歸屬部門"
         employee_id: "使用人"
