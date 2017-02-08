@@ -2,7 +2,7 @@
 server '123.57.245.154', roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:hungmi/sjz_assets_management.git'
-set :application,     'sjz_assets_management2'
+set :application,     'sjz_assets_management'
 set :user,            'deploy'
 set :puma_threads,    [0, 16]
 set :puma_workers,    4
